@@ -1,0 +1,16 @@
+rf = RandomForestClassifier(n_estimators=100, random_state=42)
+rf.fit(X_train, y_train)
+
+pred_rf = rf.predict(X_test)
+
+rf_acc = accuracy_score(y_test, pred_rf)
+print("Accuracy for Random Forest:", rf_acc)
+
+cm_rf = confusion_matrix(y_test, pred_rf)
+
+plt.figure(figsize=(6, 4))
+sns.heatmap(cm_rf, annot=True, fmt='d', cmap='Blues')
+plt.title("Confusion Matrix - Random Forest")
+plt.xlabel("Predicted")
+plt.ylabel("Actual")
+plt.show()

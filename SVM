@@ -1,0 +1,12 @@
+# SVM
+svm = SVC()
+
+# fit the model
+svm.fit(X_train, y_train)
+
+# predict the response
+pred_svm = svm.predict(X_test)
+
+# accuracy score
+svm_acc = accuracy_score(y_test, pred_svm)
+print ("Accuracy for SVM: {}".format(svm_acc))
